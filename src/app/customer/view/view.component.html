@@ -1,0 +1,47 @@
+<div class="container">
+      <div class="subheading">
+         <div class="subheading-content">
+            <fa-icon [icon]="faUser"></fa-icon>
+            <span class="section-title">Customer Information</span>
+         </div>
+      </div>
+      <div class="options">
+         <div class="options-content">
+            <span class="single-option active">
+               <fa-icon [icon]="faList"></fa-icon>
+               <span>
+                  Customer Details
+               </span>
+            </span>
+         </div>
+         <div class="options-content" [routerLink]="['/customer/edit/'+id]">
+            <span class="single-option">
+               <fa-icon [icon]="faPenSquare"></fa-icon>
+               <span>
+                  Edit Customer
+               </span>
+            </span>
+         </div>
+      </div>
+      <div class="view-section">
+         <div class="customer-details">
+            <div class="user-info">
+               <div class="user-icon">
+                  <fa-icon [icon]="faUser"></fa-icon>
+               </div>
+               <div class="user-details">
+                  <span class="user-name">
+                     {{customer.firstName}} {{customer.lastName}}
+                  </span>
+                  <span class="user-address">
+                     {{customer.address}} <br/>
+                     {{customer.city}}, {{customer.state}}
+                  </span>
+               </div>
+            </div>
+            <div class="map-view">
+               <div #gmap style="width:100%;height:400px"></div>
+            </div>
+         </div>
+      </div>
+   </div>

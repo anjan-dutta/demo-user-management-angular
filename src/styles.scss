@@ -1,0 +1,80 @@
+/* Framework */
+body {
+   font-family: sans-serif;
+}
+header {
+   background-color: #007AF8;
+   height: 61px;
+}
+.header-item {
+   display: inline-block;
+   margin-right: 10px;
+   margin-left: 10px;
+   &.icon {
+      font-size: 32px;
+      color: #ffffff;
+   }
+   &.menu {
+      color: #ffffff;
+      font-size: 18px;
+   }
+   a {
+      text-decoration: none;
+      color: #ffffff;
+   }
+   a.is-active {
+      background: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 2px;
+      color: #333333;
+      padding: 5px
+   }
+}
+.outer-container {
+   height: calc(100% - 61px);
+   overflow-y: visible;
+   width: 92%;
+   margin: 0px auto;
+}
+
+.container {
+   .subheading {
+      height: 61px;
+      display: flex;
+      flex-direction: column;
+      vertical-align: middle;
+      justify-content: center;
+      .subheading-content {
+         .ng-fa-icon {
+            font-size: 20px;
+         }
+      }
+      .section-title {
+         font-size: 19px;
+         margin-left: 8px;
+      }
+   }
+   .options {
+      height: 61px;
+      display: flex;
+      flex-direction: row;
+
+      .options-content {
+         display: flex;
+         flex-direction: column;
+         vertical-align: middle;
+         justify-content: center;
+         margin: 0 10px;
+         .single-option {
+            cursor: pointer;
+            color: #999999;
+            &.active {
+               color: #000000;
+            }
+         }
+         .single-option:hover {
+            color: #333333;
+         }
+      }
+   }
+} 

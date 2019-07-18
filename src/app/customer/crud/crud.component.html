@@ -1,0 +1,63 @@
+<div class="container">
+   <div class="subheading">
+      <div class="subheading-content">
+         <fa-icon [icon]="faUser"></fa-icon>
+         <span class="section-title">{{title}}</span>
+      </div>
+   </div>
+   <div class="options">
+      <div class="options-content">
+         <span class="single-option active" [routerLink]="['/customer/list']">
+            <fa-icon [icon]="faArrowLeft"></fa-icon>
+            <span>
+               View All Customers
+            </span>
+         </span>
+      </div>
+   </div>
+   <div class="main-content-section">
+      <div class="customer-crud-form" [formGroup]="customerForm">
+         <div class="form-field">
+            <label for="firstName">*First Name:</label>
+            <input autocomplete="off" id="firstName" formControlName="firstName" type="text">
+            <span class="required-validation-message" *ngIf="customerForm.controls.firstName.invalid&&customerForm.controls.firstName.touched">
+               * required
+            </span>
+         </div>
+         <div class="form-field">
+            <label for="lastName">*Last Name:</label>
+            <input autocomplete="off" id="lastName" formControlName="lastName" type="text">
+            <span class="required-validation-message" *ngIf="customerForm.controls.lastName.invalid&&customerForm.controls.lastName.touched">
+               * required
+            </span>
+         </div>
+         <div class="form-field">
+            <label for="address">*Address:</label>
+            <input autocomplete="off" id="address" formControlName="address" type="text">
+            <span class="required-validation-message" *ngIf="customerForm.controls.address.invalid&&customerForm.controls.address.touched">
+               * required
+            </span>
+         </div>
+         <div class="form-field">
+            <label for="city">*City:</label>
+            <input autocomplete="off" id="city" formControlName="city" type="text">
+            <span class="required-validation-message" *ngIf="customerForm.controls.city.invalid&&customerForm.controls.city.touched">
+               * required
+            </span>
+         </div>
+         <div class="form-field">
+            <label for="state">*State:</label>
+            <input autocomplete="off" id="state" formControlName="state" type="text">
+            <span class="required-validation-message" *ngIf="customerForm.controls.state.invalid&&customerForm.controls.state.touched">
+               * required
+            </span>
+         </div>
+         <div class="form-field">
+            <div class="message" *ngIf="savedTrue">Customer saved successfully.</div>
+         </div>
+         <div class="form-field btn">
+            <button class="save-btn" [disabled]="!customerForm.valid" (click)="saveCustomer()">Submit</button>
+         </div>
+      </div>
+   </div>
+</div>

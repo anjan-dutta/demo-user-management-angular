@@ -1,0 +1,94 @@
+.list-card-view {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   .single-user-block {
+      border: 1px solid #999999;
+      margin: 10px;
+      width: 23%;
+      display: flex;
+      flex-direction: column;
+      .block-header {
+         background: #007AF8;
+         display: table;
+         height: 30px;
+         width: 100%;
+         color: #ffffff;
+         .name, .right {
+            display: table-cell;
+            vertical-align: middle;
+            size: 16px;
+            color: #ffffff;
+            padding-left: 5px;
+         }
+         .right {
+            text-align: right;
+            padding-right: 4px;
+            .ng-fa-icon {
+               cursor: pointer;
+            }
+         }
+      }
+      .block-content {
+         height: 100px;
+         .user-icon-section{
+            display: inline-block;
+            font-size: 51px;
+            padding: 15px;
+         }
+         .user-info-section{
+            display: inline-block;
+            padding: 10px;
+            .content{
+               display: block;
+               &.row-view{
+                  display: none;
+               }
+            }
+         }
+      }
+   }
+}
+
+.list-card-view {
+   &.row-transform {
+      display: flex;
+      flex-direction: column;
+      .single-user-block {
+         &.grey{
+            background: #eeeeee;
+         }
+         border: 0px;
+         border-bottom: 1px solid #999999;
+         width: 100%;
+         margin: 0px;
+         display: flex;
+         flex-direction: column;
+         .block-header {
+            display: none;
+         }
+         .block-content {
+            height: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            .user-icon-section{
+               font-size: 31px;
+            }
+            .user-info-section{
+               display: flex;
+               flex-direction: row;
+               .content{
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  width: 217px;
+                  &.row-view{
+                     display: flex;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

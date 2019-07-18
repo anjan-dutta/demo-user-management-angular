@@ -1,0 +1,43 @@
+input {
+   &.ng-invalid {
+      &.ng-touched {
+         border: 1px solid red;
+      }
+   }
+}
+.required-validation-message {
+   color: red;
+   display: block;
+   margin: 5px;
+}
+.form-field {
+   text-align: left;
+   width: fit-content;
+   margin: 0px auto;
+   min-width: 261px;
+
+   label {
+      display: block;
+      margin: 10px 0px;
+      color: #666;
+   }
+
+   input[type='text'] {
+      height: 39px;
+      width: 261px;
+   }
+
+   button {
+      height: 40px;
+      font-size: 16px;
+      width: 100px;
+      margin: 10px 0px 50px 10px;
+   }
+   &.btn {
+      text-align: right;
+   }
+   .message {
+      color: green;
+      margin: 10px 0px;
+   }
+}

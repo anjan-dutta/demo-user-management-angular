@@ -1,0 +1,59 @@
+<div class="container">
+   <div class="subheading">
+      <div class="subheading-content">
+         <fa-icon [icon]="faUser"></fa-icon>
+         <span class="section-title">Customers</span>
+      </div>
+   </div>
+   <div class="options">
+      <div class="options-content">
+         <span class="single-option" [ngClass]="{'active':!rowTransform}" (click)="cardView()">
+            <fa-icon [icon]="faThLarge"></fa-icon>
+            <span>
+               Card View
+            </span>
+         </span>
+      </div>
+      <div class="options-content" (click)="listView()">
+         <span class="single-option" [ngClass]="{'active':rowTransform}">
+            <fa-icon [icon]="faBars"></fa-icon>
+            <span>
+               List View
+            </span>
+         </span>
+      </div>
+      <div class="options-content">
+         <span class="single-option" [routerLink]="['/customer/add']">
+            <fa-icon [icon]="faPlus"></fa-icon>
+            <span>
+               New Customer
+            </span>
+         </span>
+      </div>
+   </div>
+   <div class="main-content-section">
+      <div class="list-card-view" [ngClass]="{'row-transform':rowTransform}">
+         <div *ngFor="let user of users| paginate: { itemsPerPage: 8, currentPage: p };let i=index" class="single-user-block" [ngClass]="{'grey':!(i%2)}" [routerLink]="['/customer/view/'+user.id]">
+            <div class="block-header">
+               <span class="name">{{user.firstName}} {{user.lastName}}</span>
+               <span  class="right" [routerLink]="['/customer/edit/'+user.id]">
+                  <fa-icon [icon]="faPenSquare"></fa-icon>
+               </span>
+            </div>
+            <div class="block-content">
+               <div class="user-icon-section">
+                     <fa-icon [icon]="faUser"></fa-icon>
+               </div>
+               <div class="user-info-section">
+                     <span class="content row-view">{{user.firstName}}</span>
+                     <span class="content row-view">{{user.lastName}}</span>
+                     <span class="content row-view">{{user.address}}</span>
+                     <span class="content">{{user.city}}</span>
+                     <span class="content">{{user.state}}</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+   </div>
+</div>

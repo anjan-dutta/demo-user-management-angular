@@ -1,0 +1,20 @@
+.customer-details {
+   max-width: 700px;
+   .user-info {
+      margin: 10px 0px;
+      .user-icon {
+         display: inline-block;
+         font-size: 68px;
+         margin-right: 20px;
+      }
+      .user-details {
+         vertical-align: top;
+         display: inline-block;
+         .user-name {
+            margin-bottom: 11px;
+            display: block;
+            font-size: 20px;
+         }
+      }
+   }
+}

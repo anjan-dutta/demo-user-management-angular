@@ -1,0 +1,13 @@
+<header>
+   <span class="header-item icon">
+      <fa-icon [icon]="faUsers"></fa-icon>
+   </span>
+   <h4 class="header-item menu">Customer Manager</h4>
+   <nav class="header-item">
+      <a [routerLink]="['/customer']" [routerLinkActive]="'is-active'">Customers</a>
+   </nav>
+</header>
+<div class="outer-container">
+<router-outlet></router-outlet>
+</div>
+<footer></footer>
