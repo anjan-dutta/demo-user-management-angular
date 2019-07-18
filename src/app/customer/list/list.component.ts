@@ -19,6 +19,7 @@ export class ListComponent implements OnInit {
   faPenSquare = faPenSquare;
   users: Iuser[];
   rowTransform = false;
+  p: any;
 
   constructor(private customerService: CustomerService) { }
 
